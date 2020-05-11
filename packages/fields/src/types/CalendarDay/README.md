@@ -19,7 +19,7 @@ keystone.createList('User', {
     password: { type: Password },
     lastOnline: {
       type: CalendarDay,
-      format: 'Do MMMM YYYY',
+      format: 'do MMMM yyyy',
       yearRangeFrom: 1901,
       yearRangeTo: 2020,
     },
@@ -31,7 +31,7 @@ keystone.createList('User', {
 
 | Option          | Type      | Default                | Description                                                                   |
 | --------------- | --------- | ---------------------- | ----------------------------------------------------------------------------- |
-| `format`        | `String`  | `YYYY-MM-DD`           | Defines the format of date string that the will be displayed in the Admin UI. |
+| `format`        | `String`  | `yyyy-MM-dd`           | Defines the format of date string that the will be displayed in the Admin UI. |
 | `yearRangeFrom` | `Integer` | The current year - 100 | Defines the starting point of the year range, eg `1920`                       |
 | `yearRangeTo`   | `Integer` | The current year       | Defines the ending point of the range in the yearSelect field , e.g `2020`    |
 | `isRequired`    | `Boolean` | `false`                | Does this field require a value?                                              |
@@ -63,23 +63,23 @@ The default value for this field is the current year.
 ## GraphQL
 
 `CalendarDay` fields use the `String` type in GraphQL.
-The GraphQL API always uses [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format (`YYYY-MM-DD`) for both reading and writing `CalendarDay` values.
+The GraphQL API always uses [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format (`yyyy-MM-dd`) for both reading and writing `CalendarDay` values.
 
 ### Input fields
 
 | Field name | Type     | Description                                              |
 | :--------- | :------- | :------------------------------------------------------- |
-| `${path}`  | `String` | The value to be stored, in ISO8601 (`YYYY-MM-DD`) format |
+| `${path}`  | `String` | The value to be stored, in ISO8601 (`yyyy-MM-`) format |
 
 ### Output fields
 
 | Field name | Type     | Description                                        |
 | :--------- | :------- | :------------------------------------------------- |
-| `${path}`  | `String` | The stored value, in ISO8601 (`YYYY-MM-DD`) format |
+| `${path}`  | `String` | The stored value, in ISO8601 (`yyyy-MM-dd`) format |
 
 ### Filters
 
-All filter fields expect values in the ISO8601 (`YYYY-MM-DD`) format.
+All filter fields expect values in the ISO8601 (`yyyy-MM-dd`) format.
 
 | Field name       | Type       | Description                                |
 | :--------------- | :--------- | :----------------------------------------- |

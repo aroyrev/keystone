@@ -69,7 +69,7 @@ module.exports = {
     // added fields
     deadline: {
       type: CalendarDay,
-      format: 'Do MMMM YYYY',
+      format: 'do MMMM yyyy',
       yearRangeFrom: '2019',
       yearRangeTo: '2029',
       isRequired: false,
