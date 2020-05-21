@@ -1,5 +1,15 @@
 # @keystonejs/list-plugins
 
+## 6.0.1
+
+### Patch Changes
+
+- [`9738e2ec`](https://github.com/keystonejs/keystone/commit/9738e2ec929a4aa7dc8a58a58c95587f149e44f8) [#2958](https://github.com/keystonejs/keystone/pull/2958) Thanks [@Vultraz](https://github.com/Vultraz)! - Improved at-tracking date display format.
+
+- Updated dependencies [[`c2ebb51c`](https://github.com/keystonejs/keystone/commit/c2ebb51c786297879fe9fac2007804055631e9e2), [`39798209`](https://github.com/keystonejs/keystone/commit/39798209642571d3ba698e11410f5161cd1943bb), [`538378e4`](https://github.com/keystonejs/keystone/commit/538378e4eb143dbe6e7a943408e0af302eb86b85), [`ea960834`](https://github.com/keystonejs/keystone/commit/ea960834262cec66f52fa39c1b3b07b702b3cd4d), [`8fddd97b`](https://github.com/keystonejs/keystone/commit/8fddd97b20f1928ff7306d5d0dcc96e58ffe55fb), [`fdfb0141`](https://github.com/keystonejs/keystone/commit/fdfb01417b6d330342f4b6c326767c9567e35ca5), [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb), [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317), [`de27d2c1`](https://github.com/keystonejs/keystone/commit/de27d2c16b520ae5126a74efb85c70ae88ae6b60)]:
+  - @keystonejs/fields@12.0.0
+  - @keystonejs/fields-authed-relationship@1.0.6
+
 ## 6.0.0
 
 ### Major Changes

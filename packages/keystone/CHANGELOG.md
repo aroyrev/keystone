@@ -1,5 +1,51 @@
 # @keystonejs/keystone
 
+## 10.0.0
+
+### Major Changes
+
+- [`839666e2`](https://github.com/keystonejs/keystone/commit/839666e25d8bffefd034e6344e11d72dd43b925b) [#2872](https://github.com/keystonejs/keystone/pull/2872) Thanks [@wcalebgray](https://github.com/wcalebgray)! - Added async capability for all Access Control resolvers. This changes the below methods to async functions, returning Promises:
+
+  ```
+  access-control
+  - validateCustomAccessControl
+  - validateListAccessControl
+  - validateFieldAccessControl
+  - validateAuthAccessControl
+
+  keystone/List
+  - checkFieldAccess
+  - checkListAccess
+
+  keystone/providers/custom
+  - computeAccess
+
+  keystone/providers/listAuth
+  - checkAccess
+
+  ```
+
+  Changed `keystone/Keystone`'s `getGraphQlContext` return object (context) to include async resolvers for the following methods:
+
+  ```
+  - context.getCustomAccessControlForUser
+  - context.getListAccessControlForUser
+  - context.getFieldAccessControlForUser
+  - context.getAuthAccessControlForUser
+  ```
+
+### Patch Changes
+
+- [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb) [#2990](https://github.com/keystonejs/keystone/pull/2990) Thanks [@Vultraz](https://github.com/Vultraz)! - Updated various Apollo dependencies to their latest versions.
+
+* [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317) [#2046](https://github.com/keystonejs/keystone/pull/2046) Thanks [@Vultraz](https://github.com/Vultraz)! - Removed some workarounds for issues with older graphql versions
+
+* Updated dependencies [[`c2ebb51c`](https://github.com/keystonejs/keystone/commit/c2ebb51c786297879fe9fac2007804055631e9e2), [`39798209`](https://github.com/keystonejs/keystone/commit/39798209642571d3ba698e11410f5161cd1943bb), [`538378e4`](https://github.com/keystonejs/keystone/commit/538378e4eb143dbe6e7a943408e0af302eb86b85), [`ea960834`](https://github.com/keystonejs/keystone/commit/ea960834262cec66f52fa39c1b3b07b702b3cd4d), [`8fddd97b`](https://github.com/keystonejs/keystone/commit/8fddd97b20f1928ff7306d5d0dcc96e58ffe55fb), [`fdfb0141`](https://github.com/keystonejs/keystone/commit/fdfb01417b6d330342f4b6c326767c9567e35ca5), [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb), [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317), [`839666e2`](https://github.com/keystonejs/keystone/commit/839666e25d8bffefd034e6344e11d72dd43b925b), [`de27d2c1`](https://github.com/keystonejs/keystone/commit/de27d2c16b520ae5126a74efb85c70ae88ae6b60)]:
+  - @keystonejs/fields@12.0.0
+  - @keystonejs/access-control@6.0.0
+  - @keystonejs/logger@5.1.2
+  - @keystonejs/app-version@1.0.2
+
 ## 9.0.1
 
 ### Patch Changes

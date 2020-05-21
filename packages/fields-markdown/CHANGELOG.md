@@ -1,5 +1,37 @@
 # @keystonejs/fields-markdown
 
+## 5.2.0
+
+### Minor Changes
+
+- [`c2ebb51c`](https://github.com/keystonejs/keystone/commit/c2ebb51c786297879fe9fac2007804055631e9e2) [#2258](https://github.com/keystonejs/keystone/pull/2258) Thanks [@gautamsi](https://github.com/gautamsi)! - \* Added `isReadOnly` option on field's `adminConfig`. Fields with this option set will be excluded from the `create` form, and set as disabled in the `update` form in the Admin UI.
+
+  - Updated the item detail page to include fields with access `{ update: false }` in a disabled state, rather than excluded the form.
+
+  Example:
+
+  ```js
+  keystone.createList('Todo', {
+    fields: {
+      name: { type: Text, isRequired: true },
+      someReadOnlyField: {
+        type: Text,
+        adminConfig: {
+          isReadOnly: true,
+        },
+        defaultValue: 'Some default value',
+      },
+    },
+  });
+  ```
+
+### Patch Changes
+
+- Updated dependencies [[`c2ebb51c`](https://github.com/keystonejs/keystone/commit/c2ebb51c786297879fe9fac2007804055631e9e2), [`39798209`](https://github.com/keystonejs/keystone/commit/39798209642571d3ba698e11410f5161cd1943bb), [`538378e4`](https://github.com/keystonejs/keystone/commit/538378e4eb143dbe6e7a943408e0af302eb86b85), [`ea960834`](https://github.com/keystonejs/keystone/commit/ea960834262cec66f52fa39c1b3b07b702b3cd4d), [`8fddd97b`](https://github.com/keystonejs/keystone/commit/8fddd97b20f1928ff7306d5d0dcc96e58ffe55fb), [`fdfb0141`](https://github.com/keystonejs/keystone/commit/fdfb01417b6d330342f4b6c326767c9567e35ca5), [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb), [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317), [`a8d444b2`](https://github.com/keystonejs/keystone/commit/a8d444b25109f84e9d4659f2a260c5ad65f93393), [`86f3fffb`](https://github.com/keystonejs/keystone/commit/86f3fffb8aa4de455cf18d7c95f5135a5ad17731), [`de27d2c1`](https://github.com/keystonejs/keystone/commit/de27d2c16b520ae5126a74efb85c70ae88ae6b60)]:
+  - @keystonejs/fields@12.0.0
+  - @arch-ui/fields@3.0.2
+  - @keystonejs/build-field-types@5.2.8
+
 ## 5.1.11
 
 ### Patch Changes

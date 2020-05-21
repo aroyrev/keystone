@@ -1,5 +1,77 @@
 # @keystonejs/app-admin-ui
 
+## 7.0.0
+
+### Major Changes
+
+- [`ea960834`](https://github.com/keystonejs/keystone/commit/ea960834262cec66f52fa39c1b3b07b702b3cd4d) [#2976](https://github.com/keystonejs/keystone/pull/2976) Thanks [@Vultraz](https://github.com/Vultraz)! - Refactored how list and item queries and generated. Field controllers' `getFilterGraphQL` method now returns an object in the format { filter: value } rather than a GraphQL string.
+
+### Minor Changes
+
+- [`c2ebb51c`](https://github.com/keystonejs/keystone/commit/c2ebb51c786297879fe9fac2007804055631e9e2) [#2258](https://github.com/keystonejs/keystone/pull/2258) Thanks [@gautamsi](https://github.com/gautamsi)! - \* Added `isReadOnly` option on field's `adminConfig`. Fields with this option set will be excluded from the `create` form, and set as disabled in the `update` form in the Admin UI.
+
+  - Updated the item detail page to include fields with access `{ update: false }` in a disabled state, rather than excluded the form.
+
+  Example:
+
+  ```js
+  keystone.createList('Todo', {
+    fields: {
+      name: { type: Text, isRequired: true },
+      someReadOnlyField: {
+        type: Text,
+        adminConfig: {
+          isReadOnly: true,
+        },
+        defaultValue: 'Some default value',
+      },
+    },
+  });
+  ```
+
+### Patch Changes
+
+- [`f493eecc`](https://github.com/keystonejs/keystone/commit/f493eecc34a0f1a6ba9f8eea1c34882784c1b5fe) [#2992](https://github.com/keystonejs/keystone/pull/2992) Thanks [@Vultraz](https://github.com/Vultraz)! - Fixed a few minor usability issues with item sorting:
+  - Fixed list view sort indicator pointing the wrong way. Previously, it would unintuitively point down for ascending down and vice-versa for descending.
+  - Fixed Sort Select popup losing focus when pressing Alt.
+
+* [`39798209`](https://github.com/keystonejs/keystone/commit/39798209642571d3ba698e11410f5161cd1943bb) [#2956](https://github.com/keystonejs/keystone/pull/2956) Thanks [@Vultraz](https://github.com/Vultraz)! - Added a password field cell view.
+
+- [`538378e4`](https://github.com/keystonejs/keystone/commit/538378e4eb143dbe6e7a943408e0af302eb86b85) [#2987](https://github.com/keystonejs/keystone/pull/2987) Thanks [@Vultraz](https://github.com/Vultraz)! - Simplifed ItemLink handling.
+
+* [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb) [#2990](https://github.com/keystonejs/keystone/pull/2990) Thanks [@Vultraz](https://github.com/Vultraz)! - Updated various Apollo dependencies to their latest versions.
+
+- [`da8ca883`](https://github.com/keystonejs/keystone/commit/da8ca8835a910cc9b2f53e12ddaef88ffc194695) [#2982](https://github.com/keystonejs/keystone/pull/2982) Thanks [@Vultraz](https://github.com/Vultraz)! - Fixed an issue with the no-lists-defined display.
+
+* [`fd4e9100`](https://github.com/keystonejs/keystone/commit/fd4e9100a636e0654db45d2471ce47a19b753647) [#2964](https://github.com/keystonejs/keystone/pull/2964) Thanks [@Vultraz](https://github.com/Vultraz)! - Disable Update button in popout if no fields are selected.
+
+- [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317) [#2046](https://github.com/keystonejs/keystone/pull/2046) Thanks [@Vultraz](https://github.com/Vultraz)! - Removed some workarounds for issues with older graphql versions
+
+* [`6ab52347`](https://github.com/keystonejs/keystone/commit/6ab523476ceca5ad57e7833ebd172b2da6c0b5fd) [#3000](https://github.com/keystonejs/keystone/pull/3000) Thanks [@Vultraz](https://github.com/Vultraz)! - Made ID list table cells render in monospace font.
+
+- [`9ca0733e`](https://github.com/keystonejs/keystone/commit/9ca0733e57b525a7efdfdedfb7c80364e186994e) [#2986](https://github.com/keystonejs/keystone/pull/2986) Thanks [@Vultraz](https://github.com/Vultraz)! - Phased out Emotion.styled in favor of Emotion's css prop.
+
+* [`7203c588`](https://github.com/keystonejs/keystone/commit/7203c588901c46fae1550f3596cab43a1dd5052a) [#2978](https://github.com/keystonejs/keystone/pull/2978) Thanks [@Vultraz](https://github.com/Vultraz)! - Refactored how query refetches are handled.
+
+- [`d2390b70`](https://github.com/keystonejs/keystone/commit/d2390b703d30e0b4264ab6ed9b1ba4d7bb9fca6c) [#2955](https://github.com/keystonejs/keystone/pull/2955) Thanks [@Vultraz](https://github.com/Vultraz)! - Used fixed table layout.
+
+* [`34a9816d`](https://github.com/keystonejs/keystone/commit/34a9816d3c40a35409be735e748cea2c6d5aa895) [#2983](https://github.com/keystonejs/keystone/pull/2983) Thanks [@Vultraz](https://github.com/Vultraz)! - Cleaned up TableRow and BodyCell styling.
+
+- [`b15221ac`](https://github.com/keystonejs/keystone/commit/b15221ac21746b1380ddb31395cdd386d52920a9) [#2979](https://github.com/keystonejs/keystone/pull/2979) Thanks [@Vultraz](https://github.com/Vultraz)! - Fixed duplicate Access Denied errors appearing for lists.
+
+* [`ba363d9a`](https://github.com/keystonejs/keystone/commit/ba363d9a82d3ca3ec464547a5d9e38354bc2a172) [#2855](https://github.com/keystonejs/keystone/pull/2855) Thanks [@Vultraz](https://github.com/Vultraz)! - Converted more React components to functional form.
+
+- [`c7599a46`](https://github.com/keystonejs/keystone/commit/c7599a46f05108b10b3a805a20b77b4d834e616d) [#2985](https://github.com/keystonejs/keystone/pull/2985) Thanks [@Vultraz](https://github.com/Vultraz)! - Include persistent search state when navigating back to list.
+
+* [`10babad4`](https://github.com/keystonejs/keystone/commit/10babad4b4135738bc0633b113e5c96d3ddb9e9f) [#2998](https://github.com/keystonejs/keystone/pull/2998) Thanks [@Vultraz](https://github.com/Vultraz)! - Fixed navbar list being sorted by list key instead of label.
+
+- [`24f5ab51`](https://github.com/keystonejs/keystone/commit/24f5ab51c69d744fb0e1f47a0723c2cc70492010) [#2984](https://github.com/keystonejs/keystone/pull/2984) Thanks [@Vultraz](https://github.com/Vultraz)! - Cleaned up on-create callback duplication.
+
+- Updated dependencies [[`c2ebb51c`](https://github.com/keystonejs/keystone/commit/c2ebb51c786297879fe9fac2007804055631e9e2), [`39798209`](https://github.com/keystonejs/keystone/commit/39798209642571d3ba698e11410f5161cd1943bb), [`538378e4`](https://github.com/keystonejs/keystone/commit/538378e4eb143dbe6e7a943408e0af302eb86b85), [`ea960834`](https://github.com/keystonejs/keystone/commit/ea960834262cec66f52fa39c1b3b07b702b3cd4d), [`8fddd97b`](https://github.com/keystonejs/keystone/commit/8fddd97b20f1928ff7306d5d0dcc96e58ffe55fb), [`fdfb0141`](https://github.com/keystonejs/keystone/commit/fdfb01417b6d330342f4b6c326767c9567e35ca5), [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb), [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317), [`a8d444b2`](https://github.com/keystonejs/keystone/commit/a8d444b25109f84e9d4659f2a260c5ad65f93393), [`86f3fffb`](https://github.com/keystonejs/keystone/commit/86f3fffb8aa4de455cf18d7c95f5135a5ad17731), [`de27d2c1`](https://github.com/keystonejs/keystone/commit/de27d2c16b520ae5126a74efb85c70ae88ae6b60)]:
+  - @keystonejs/fields@12.0.0
+  - @arch-ui/fields@3.0.2
+  - @keystonejs/build-field-types@5.2.8
+
 ## 6.0.2
 
 ### Patch Changes

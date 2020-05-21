@@ -1,5 +1,14 @@
 # @keystonejs/adapter-mongoose
 
+## 8.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`ea960834`](https://github.com/keystonejs/keystone/commit/ea960834262cec66f52fa39c1b3b07b702b3cd4d), [`aacc4a7f`](https://github.com/keystonejs/keystone/commit/aacc4a7f8f88c242ae4bd784330d25056842d3fb), [`4b06157b`](https://github.com/keystonejs/keystone/commit/4b06157be6cffde2d88969823f7c410fefd82317), [`839666e2`](https://github.com/keystonejs/keystone/commit/839666e25d8bffefd034e6344e11d72dd43b925b)]:
+  - @keystonejs/fields-mongoid@6.0.0
+  - @keystonejs/keystone@10.0.0
+  - @keystonejs/logger@5.1.2
+
 ## 8.1.1
 
 ### Patch Changes
